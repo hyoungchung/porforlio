@@ -207,12 +207,11 @@ export default function Home() {
                   fill
                   className="object-cover object-top"
                   style={{
-                    mixBlendMode: "multiply",
                     maskImage:
-                      "linear-gradient(to bottom, black 70%, transparent 100%)",
+                      "linear-gradient(to bottom, black 65%, transparent 100%)",
                     WebkitMaskImage:
-                      "linear-gradient(to bottom, black 70%, transparent 100%)",
-                    scale: "1.15",
+                      "linear-gradient(to bottom, black 65%, transparent 100%)",
+                    transform: "scale(1.2)",
                     transformOrigin: "top center",
                   }}
                   priority
