@@ -4,6 +4,7 @@ import { GlassLayer } from "@/components/portfolio/glass-layer";
 import { MouseLight } from "@/components/portfolio/mouse-light";
 import { BlurFade } from "@/components/portfolio/blur-fade";
 import { MagicCard } from "@/components/portfolio/magic-card";
+import { TallyEmbed } from "@/components/portfolio/tally-embed";
 import {
   BubbleClusterPreview,
   ChatThreadPreview,
@@ -106,7 +107,7 @@ function WorkCard({
 
 export default function Home() {
   return (
-    <main className="relative h-dvh overflow-hidden text-portfolio-text">
+    <main className="relative min-h-dvh text-portfolio-text">
       {/* ── Fixed background ── */}
       <div className="fixed inset-0 -z-10">
         <Image
@@ -180,8 +181,8 @@ export default function Home() {
       </div>
 
       {/* ── First viewport: Hero + About + Works ── */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-4 px-6 py-5 lg:gap-5 lg:px-10 lg:py-6">
-        <div className="flex w-full max-w-[1100px] flex-1 min-h-0 gap-4 lg:gap-5">
+      <div className="relative z-10 flex min-h-dvh flex-col items-center gap-4 px-6 py-5 lg:gap-5 lg:px-10 lg:py-6">
+        <div className="flex w-full max-w-[1100px] flex-1 min-h-0 gap-4 lg:gap-5" style={{height: "calc(100dvh - 240px)"}}>
           {/* ── LEFT card: Avatar + Name ── */}
           <section
             id="hero"
@@ -206,11 +207,10 @@ export default function Home() {
                   fill
                   className="object-contain object-bottom"
                   style={{
-                    mixBlendMode: "multiply",
                     maskImage:
-                      "radial-gradient(ellipse 78% 88% at 50% 46%, black 50%, transparent 78%)",
+                      "radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 85%)",
                     WebkitMaskImage:
-                      "radial-gradient(ellipse 78% 88% at 50% 46%, black 50%, transparent 78%)",
+                      "radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 85%)",
                   }}
                   priority
                 />
@@ -395,6 +395,35 @@ export default function Home() {
               </BlurFade>
             ))}
           </div>
+        </section>
+
+        {/* ── Contact section ── */}
+        <section id="contact" className="w-full max-w-[1100px] pb-10">
+          <BlurFade delay={0.1} className="mb-3 flex items-end justify-between">
+            <div>
+              <p className="mb-0.5 font-mono text-[9px] font-normal tracking-[0.34em] text-portfolio-muted/60 uppercase">
+                Contact
+              </p>
+              <h2 className="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] font-thin leading-none tracking-wide text-portfolio-deep">
+                Let&apos;s Talk.
+              </h2>
+            </div>
+            <a
+              href="mailto:hyoung.chung@samsung.com"
+              className="font-mono text-[10px] font-normal tracking-[0.2em] text-portfolio-amber hover:underline uppercase"
+            >
+              hyoung.chung@samsung.com
+            </a>
+          </BlurFade>
+
+          <BlurFade delay={0.2}>
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/30 backdrop-blur-md">
+              <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white/40 via-transparent to-sky-100/20" />
+              <div className="relative z-10 p-6 sm:p-8">
+                <TallyEmbed />
+              </div>
+            </div>
+          </BlurFade>
         </section>
       </div>
     </main>
