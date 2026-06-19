@@ -205,12 +205,15 @@ export default function Home() {
                   src="/avatar-heeyoung.png"
                   alt="Heeyoung avatar"
                   fill
-                  className="object-contain object-bottom"
+                  className="object-cover object-top"
                   style={{
+                    mixBlendMode: "multiply",
                     maskImage:
-                      "radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 85%)",
+                      "linear-gradient(to bottom, black 70%, transparent 100%)",
                     WebkitMaskImage:
-                      "radial-gradient(ellipse 90% 85% at 50% 50%, black 55%, transparent 85%)",
+                      "linear-gradient(to bottom, black 70%, transparent 100%)",
+                    scale: "1.15",
+                    transformOrigin: "top center",
                   }}
                   priority
                 />
@@ -398,29 +401,78 @@ export default function Home() {
         </section>
 
         {/* ── Contact section ── */}
-        <section id="contact" className="w-full max-w-[1100px] pb-10">
-          <BlurFade delay={0.1} className="mb-3 flex items-end justify-between">
-            <div>
-              <p className="mb-0.5 font-mono text-[9px] font-normal tracking-[0.34em] text-portfolio-muted/60 uppercase">
-                Contact
-              </p>
-              <h2 className="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] font-thin leading-none tracking-wide text-portfolio-deep">
-                Let&apos;s Talk.
-              </h2>
-            </div>
-            <a
-              href="mailto:hyoung.chung@samsung.com"
-              className="font-mono text-[10px] font-normal tracking-[0.2em] text-portfolio-amber hover:underline uppercase"
-            >
-              hyoung.chung@samsung.com
-            </a>
+        <section id="contact" className="w-full max-w-[1100px] pb-12">
+          <BlurFade delay={0.1} className="mb-4">
+            <p className="mb-0.5 font-mono text-[9px] font-normal tracking-[0.34em] text-portfolio-muted/60 uppercase">
+              Contact
+            </p>
+            <h2 className="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] font-thin leading-none tracking-wide text-portfolio-deep">
+              Let&apos;s Talk.
+            </h2>
           </BlurFade>
 
           <BlurFade delay={0.2}>
             <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/30 backdrop-blur-md">
-              <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white/40 via-transparent to-sky-100/20" />
-              <div className="relative z-10 p-6 sm:p-8">
-                <TallyEmbed />
+              <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white/50 via-transparent to-sky-100/30" />
+              <div className="relative z-10 grid grid-cols-1 gap-0 md:grid-cols-[1fr_1.6fr]">
+
+                {/* Left: info */}
+                <div className="flex flex-col justify-between border-b border-white/40 p-7 md:border-b-0 md:border-r">
+                  <div className="space-y-6">
+                    <div>
+                      <p className="font-mono text-[9px] font-normal tracking-[0.3em] text-portfolio-muted/50 uppercase">
+                        Open to
+                      </p>
+                      <p className="font-display mt-1.5 text-[1.1rem] font-thin leading-snug tracking-wide text-portfolio-deep">
+                        Freelance &amp; <br />Full-time roles
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[9px] font-normal tracking-[0.3em] text-portfolio-muted/50 uppercase">
+                        Email
+                      </p>
+                      <a
+                        href="mailto:hyoung.chung@samsung.com"
+                        className="font-body mt-1.5 block text-[13px] font-light leading-snug text-portfolio-amber hover:underline"
+                      >
+                        hyoung.chung@samsung.com
+                      </a>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[9px] font-normal tracking-[0.3em] text-portfolio-muted/50 uppercase">
+                        Based in
+                      </p>
+                      <p className="font-body mt-1.5 text-[13px] font-light text-portfolio-muted">
+                        Seoul, Korea
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* decorative chat bubble */}
+                  <div className="mt-8 space-y-2">
+                    <div className="flex items-end gap-2">
+                      <div className="h-6 w-6 shrink-0 overflow-hidden rounded-full bg-portfolio-amber/20">
+                        <div className="flex h-full w-full items-center justify-center font-mono text-[8px] text-portfolio-amber">H</div>
+                      </div>
+                      <div className="rounded-2xl rounded-bl-sm bg-white/50 px-3 py-2 backdrop-blur-sm">
+                        <p className="font-body text-[11px] font-light text-portfolio-text">
+                          Let&apos;s build something meaningful together 💬
+                        </p>
+                      </div>
+                    </div>
+                    <p className="font-mono pl-8 text-[9px] text-portfolio-muted/40 tracking-wide">
+                      Delivered · Just now
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right: Tally form */}
+                <div className="p-7">
+                  <p className="mb-4 font-mono text-[9px] font-normal tracking-[0.3em] text-portfolio-muted/50 uppercase">
+                    Send a message
+                  </p>
+                  <TallyEmbed />
+                </div>
               </div>
             </div>
           </BlurFade>
