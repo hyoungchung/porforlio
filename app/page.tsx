@@ -205,14 +205,12 @@ export default function Home() {
                   src="/avatar-heeyoung.png"
                   alt="Heeyoung avatar"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   style={{
                     maskImage:
-                      "linear-gradient(to bottom, black 65%, transparent 100%)",
+                      "linear-gradient(to bottom, black 80%, transparent 100%)",
                     WebkitMaskImage:
-                      "linear-gradient(to bottom, black 65%, transparent 100%)",
-                    transform: "scale(1.2)",
-                    transformOrigin: "top center",
+                      "linear-gradient(to bottom, black 80%, transparent 100%)",
                   }}
                   priority
                 />
